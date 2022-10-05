@@ -137,4 +137,13 @@ Please choose an option by entering a number:
     @rentals.push(Rental.new(date, @people[person_choice], @books[book_choice]))
     puts 'Rental created successfully'
   end
+
+  def ui_display_rentals(id)
+    @rentals.each do |rental|
+      next unless rental.person.id == id
+
+      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+    end
+  end
+
 end
