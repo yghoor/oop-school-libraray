@@ -23,4 +23,13 @@ Please choose an option by entering a number:
 7 - Exit'
   end
 
+  def ui_display_books
+    @books.each_with_index { |book, i| puts "#{i + 1}) Title: \"#{book.title}\", Author: #{book.author}" }
+  end
+
+  def ui_display_people
+    @people.each_with_index do |person, i|
+      puts "#{i + 1}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
+    end
+  end
 end
