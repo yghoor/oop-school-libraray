@@ -109,4 +109,32 @@ Please choose an option by entering a number:
     true
   end
 
+  def ui_create_rental
+    if @books.empty?
+      puts 'No books available'
+      return
+    end
+
+    puts 'Select a book from the following list by number'
+    ui_display_books
+    book_choice = gets.chomp.to_i
+
+    book_choice = rental_choice_corrector(book_choice, @books)
+
+    puts 'Select a person from the following list by number (not id)'
+    ui_display_people
+    person_choice = gets.chomp.to_i
+
+    person_choice = rental_choice_corrector(person_choice, @people)
+    unless permissions?(@people[person_choice])
+      puts 'Student does not have permission'
+      return
+    end
+
+    print 'Date: '
+    date = gets.chomp
+
+    @rentals.push(Rental.new(date, @people[person_choice], @books[book_choice]))
+    puts 'Rental created successfully'
+  end
 end
