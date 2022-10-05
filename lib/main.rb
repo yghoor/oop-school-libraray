@@ -146,4 +146,10 @@ Please choose an option by entering a number:
     end
   end
 
-end
+  def ui_rentals_with_id
+    puts 'ID of person: '
+    id = gets.chomp.to_i
+
+    puts 'Rentals: '
+    ui_display_rentals(id)
+  end
