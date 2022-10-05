@@ -103,4 +103,10 @@ Please choose an option by entering a number:
     end
   end
 
+  def permissions?(person)
+    return false unless person.can_use_services?
+
+    true
+  end
+
 end
