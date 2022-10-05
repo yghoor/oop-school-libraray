@@ -92,4 +92,15 @@ Please choose an option by entering a number:
     @books.push(Book.new(title, author))
     puts 'Book created successfully'
   end
+
+  def rental_choice_corrector(choice, array)
+    loop do
+      return choice - 1 unless choice < 1 || choice > array.length
+
+      # subtract 1 from choice because UI list display numbers start from 1
+      print 'Please enter a valid list number: '
+      choice = gets.chomp.to_i
+    end
+  end
+
 end
