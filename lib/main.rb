@@ -153,3 +153,51 @@ Please choose an option by entering a number:
     puts 'Rentals: '
     ui_display_rentals(id)
   end
+
+  def run
+    puts 'Welcome to  School Library App!'
+    loop do
+      puts home_screen_text
+
+      menu_option = gets.chomp
+
+      case menu_option
+      when '1'
+        ui_display_books
+
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '2'
+        ui_display_people
+
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '3'
+        ui_create_person
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '4'
+        ui_create_book
+
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '5'
+        ui_create_rental
+
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '6'
+        ui_rentals_with_id
+
+        puts "\n\nPress the Enter key to continue"
+        gets.chomp
+      when '7'
+        puts 'Thank you for using this app!'
+        return
+      else
+        puts 'Please enter a valid list option'
+      end
+    end
+  end
+end
+
