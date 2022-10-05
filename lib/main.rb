@@ -81,4 +81,15 @@ Please choose an option by entering a number:
       puts 'Person created successfully'
     end
   end
+
+  def ui_create_book
+    print 'Title: '
+    title = gets.chomp
+
+    print 'Author: '
+    author = gets.chomp
+
+    @books.push(Book.new(title, author))
+    puts 'Book created successfully'
+  end
 end
