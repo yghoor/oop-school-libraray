@@ -5,7 +5,6 @@ require_relative './teacher'
 require_relative './book'
 require_relative './rental'
 
-# rubocop:disable Metrics/ClassLength
 class App
   def initialize
     @books = []
@@ -162,7 +161,6 @@ Please choose an option by entering a number:
   # rubocop:disable Metrics/CyclomaticComplexity
   def run
     puts 'Welcome to  School Library App!'
-    # rubocop:disable Metrics/BlockLength
     loop do
       puts home_screen_text
 
@@ -171,47 +169,29 @@ Please choose an option by entering a number:
       case menu_option
       when '1'
         ui_display_books
-
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
       when '2'
         ui_display_people
-
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
       when '3'
-        ui_create_person
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
+        ui_create_perso
       when '4'
         ui_create_book
-
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
       when '5'
         ui_create_rental
-
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
       when '6'
         ui_rentals_with_id
-
-        puts "\n\nPress the Enter key to continue"
-        gets.chomp
       when '7'
         puts 'Thank you for using this app!'
         return
       else
         puts 'Please enter a valid list option'
       end
+      puts "\n\nPress the Enter key to continue"
+      gets.chomp
     end
-    # rubocop:enable Metrics/BlockLength
   end
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/CyclomaticComplexity
 end
-
-# rubocop:enable Metrics/ClassLength,
 
 def main
   app = App.new
