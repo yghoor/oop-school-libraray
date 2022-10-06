@@ -1,4 +1,4 @@
-# robucop:disable Style/OptionalBooleanParameter
+# rubocop:disable Style/OptionalBooleanParameter
 class Teacher < Person
   attr_reader :person_type
 
@@ -12,3 +12,4 @@ class Teacher < Person
     true
   end
 end
+# rubocop:enable Style/OptionalBooleanParameter

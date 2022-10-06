@@ -1,4 +1,4 @@
-# robucop:disable Style/OptionalBooleanParameter
+# rubocop:disable Style/OptionalBooleanParameter
 require_relative './corrector'
 
 class Person
@@ -32,3 +32,4 @@ class Person
     @age >= 18
   end
 end
+# rubocop:enable Style/OptionalBooleanParameter

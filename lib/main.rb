@@ -159,6 +159,7 @@ Please choose an option by entering a number:
   end
 
   # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/CyclomaticComplexity
   def run
     puts 'Welcome to  School Library App!'
     # rubocop:disable Metrics/BlockLength
@@ -207,6 +208,7 @@ Please choose an option by entering a number:
     # rubocop:enable Metrics/BlockLength
   end
   # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
 
 # rubocop:enable Metrics/ClassLength,
