@@ -5,6 +5,7 @@ require_relative './teacher'
 require_relative './book'
 require_relative './rental'
 
+# rubocop:disable Metrics/ClassLength
 class App
   def initialize
     @books = []
@@ -34,6 +35,7 @@ Please choose an option by entering a number:
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def ui_create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
 
@@ -82,6 +84,7 @@ Please choose an option by entering a number:
       puts 'Person created successfully'
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def ui_create_book
     print 'Title: '
@@ -155,8 +158,10 @@ Please choose an option by entering a number:
     ui_display_rentals(id)
   end
 
+  # rubocop:disable Metrics/MethodLength
   def run
     puts 'Welcome to  School Library App!'
+    # rubocop:disable Metrics/BlockLength
     loop do
       puts home_screen_text
 
@@ -199,8 +204,12 @@ Please choose an option by entering a number:
         puts 'Please enter a valid list option'
       end
     end
+    # rubocop:enable Metrics/BlockLength
   end
+  # rubocop:enable Metrics/MethodLength
 end
+
+# rubocop:enable Metrics/ClassLength,
 
 def main
   app = App.new

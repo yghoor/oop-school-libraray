@@ -1,3 +1,4 @@
+# robucop:disable Style/OptionalBooleanParameter
 class Teacher < Person
   attr_reader :person_type
 
