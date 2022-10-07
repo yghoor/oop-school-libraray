@@ -10,6 +10,7 @@ require_relative './rental'
 # rubocop:disable Metrics/ClassLength
 class App
   def initialize
+    # rubocop:disable Security/MarshalLoad
     @books =
       if File.size('../config/enviroments/books.json').zero?
         []
@@ -30,6 +31,7 @@ class App
       else
         Marshal.load(JSON.parse(File.read('../config/enviroments/rentals.json')))
       end
+    # rubocop:enable Security/MarshalLoad
   end
 
   def home_screen_text
