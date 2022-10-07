@@ -210,7 +210,7 @@ Please choose an option by entering a number:
       else
         puts 'Please enter a valid list option'
       end
-      puts "\n\nPress the Enter key to continue"
+      puts "\nPress the Enter key to continue"
       gets.chomp
     end
   end
