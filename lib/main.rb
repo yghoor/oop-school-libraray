@@ -194,7 +194,7 @@ Please choose an option by entering a number:
       when '2'
         ui_display_people
       when '3'
-        ui_create_perso
+        ui_create_person
       when '4'
         ui_create_book
       when '5'
