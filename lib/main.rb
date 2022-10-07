@@ -7,6 +7,7 @@ require_relative './teacher'
 require_relative './book'
 require_relative './rental'
 
+# rubocop:disable Metrics/ClassLength
 class App
   def initialize
     @books = []
@@ -194,6 +195,7 @@ Please choose an option by entering a number:
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/CyclomaticComplexity
 end
+# rubocop:enable Metrics/ClassLength
 
 def main
   app = App.new
