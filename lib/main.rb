@@ -10,9 +10,26 @@ require_relative './rental'
 # rubocop:disable Metrics/ClassLength
 class App
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books =
+      if File.size('../config/enviroments/books.json').zero?
+        []
+      else
+        Marshal.load(JSON.parse(File.read('../config/enviroments/books.json')))
+      end
+
+    @people =
+      if File.size('../config/enviroments/people.json').zero?
+        []
+      else
+        Marshal.load(JSON.parse(File.read('../config/enviroments/people.json')))
+      end
+
+    @rentals =
+      if File.size('../config/enviroments/rentals.json').zero?
+        []
+      else
+        Marshal.load(JSON.parse(File.read('../config/enviroments/rentals.json')))
+      end
   end
 
   def home_screen_text
