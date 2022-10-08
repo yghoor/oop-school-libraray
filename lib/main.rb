@@ -179,6 +179,12 @@ Please choose an option by entering a number:
     ui_display_rentals(id)
   end
 
+  def save_data
+    File.write('../config/enviroments/books.json', JSON.generate(Marshal.dump(@books))) unless @books.empty?
+    File.write('../config/enviroments/people.json', JSON.generate(Marshal.dump(@people))) unless @people.empty?
+    File.write('../config/enviroments/rentals.json', JSON.generate(Marshal.dump(@rentals))) unless @rentals.empty?
+  end
+
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/CyclomaticComplexity
   def run
@@ -202,9 +208,7 @@ Please choose an option by entering a number:
       when '6'
         ui_rentals_with_id
       when '7'
-        File.write('../config/enviroments/books.json', JSON.generate(Marshal.dump(@books))) unless @books.empty?
-        File.write('../config/enviroments/people.json', JSON.generate(Marshal.dump(@people))) unless @people.empty?
-        File.write('../config/enviroments/rentals.json', JSON.generate(Marshal.dump(@rentals))) unless @rentals.empty?
+        save_data
         puts 'Thank you for using this app!'
         return
       else
