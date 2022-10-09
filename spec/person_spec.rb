@@ -80,3 +80,14 @@ describe 'Person#validate_name' do
     expect(person.name).to eq('Person unt')
   end
 end
+
+describe 'One-to-many relationship with Rental class' do
+  context 'when a rental is created' do
+    it 'the rental is added to the person\'s rentals' do
+      book = Book.new('Title', 'Author')
+      person = Person.new(25, 'person')
+      person.add_rental('YYYY/MM/DD', book)
+      expect(person.rentals).to_not be_empty
+    end
+  end
+end
