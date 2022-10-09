@@ -82,3 +82,20 @@ describe 'student#validate_name' do
   end
 end
 
+describe 'Many-to-one relationship with Classroom class' do
+  context 'when a classroom is given as a parameter to a student' do
+    it 'the student\'s classroom attribute is set to the classroom' do
+      classroom = Classroom.new('classroom type')
+      student = Student.new(@classroom, 15, 'student', true)
+      classroom.add_student(student)
+      expect(student.classroom).to eq(classroom)
+    end
+
+    it 'the student is added to the classroom\'s students array' do
+      classroom = Classroom.new('classroom type')
+      student = Student.new(@classroom, 15, 'student', true)
+      classroom.add_student(student)
+      expect(classroom.students).to include(student)
+    end
+  end
+end
