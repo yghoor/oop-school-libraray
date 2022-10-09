@@ -24,3 +24,13 @@ describe Book do
   end
 end
 
+describe 'One-to-many relationship with Rental class' do
+  context 'when a rental is created' do
+    it 'the rental is added to the book\'s rentals' do
+      book = Book.new('Title', 'Author')
+      person = Person.new(25, 'person')
+      book.add_rental('YYYY/MM/DD', person)
+      expect(book.rentals).to_not be_empty
+    end
+  end
+end
