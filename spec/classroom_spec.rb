@@ -24,3 +24,20 @@ describe Classroom do
   end
 end
 
+describe 'One-to-many relationship with Student class' do
+  context 'when a student is added to a classroom' do
+    it 'the student is added to the classroom\'s students array' do
+      classroom = Classroom.new('classroom type')
+      student = Student.new(nil, 15, 'student', true)
+      classroom.add_student(student)
+      expect(classroom.students).to include(student)
+    end
+
+    it 'the student\'s classroom attribute is set to the classroom' do
+      classroom = Classroom.new('classroom type')
+      student = Student.new(nil, 15, 'student', true)
+      classroom.add_student(student)
+      expect(student.classroom).to eq(classroom)
+    end
+  end
+end
